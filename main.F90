@@ -34,4 +34,17 @@ program main
   write (1101,*),JVS_orig
   close(1101)
 
+  JVS1=JVS_orig
+  X1=X_orig
+  CALL KppSolveIndirect(JVS1,X1)
+
+  OPEN(unit=1101,file='text_X.txt')
+  write (1101,*),X1
+  close(1101)
+
+  OPEN(unit=1101,file='text_X_orig.txt')
+  write (1101,*),X_orig
+  close(1101) 
+
+
 end program
