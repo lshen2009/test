@@ -349,7 +349,7 @@ SUBROUTINE KppSolveIndirect( JVS, X )
       INTEGER  :: i, j
       REAL(kind=dp) :: JVS(LU_NONZERO), X(NVAR), sum
       character(len=20) :: name1,name2,name3,name4,name5
-      character(len=1200)::longname,longname2
+      character(len=2200)::longname,longname2
       LOGICAL::flag
       flag=.FALSE. 
       open(1102,file='Fun_KppSolve.txt') 
