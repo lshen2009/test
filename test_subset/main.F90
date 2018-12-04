@@ -23,6 +23,8 @@ program main
   X_selected=X(select_ind_12)
   X_deleted=X(delete_ind_12)
   !First check the Function
-  CALL Fun_12 ( X_selected,X_deleted, F, RCT, Vdot) 
+  CALL Fun_12 ( X_selected,X_deleted, F, RCT, Vdot)
+  CALL Fun_13 ( X, F, RCT, Vdot, NVAR )
+  
 
 end program
