@@ -10,8 +10,8 @@ lines=input_file.readlines()
 input_file.close()
 
 for num in range(2,21):
-    if(num==13):
-        continue
+    #if(num==13):
+    #    continue
     new_lines=[]
     for line in lines:
         line=line.replace('_3','_'+str(num))        

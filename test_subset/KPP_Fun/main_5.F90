@@ -2,6 +2,7 @@ program main
   USE gckpp_Parameters
   USE gckpp_JacobianSP
   USE gckpp_Function
+  USE gckpp_Function2
   USE gckpp_Jacobian
   USE initialize
   USE gckpp_LinearAlgebra
@@ -31,7 +32,7 @@ program main
   X_deleted=X(delete_ind_5)
   !First check the Function
   CALL Fun_5 ( X_selected,X_deleted, F, RCT, Vdot_SEL)
-  CALL Fun_13 ( X, F, RCT, Vdot, NVAR )
+  CALL Fun ( X, F, RCT, Vdot)
   diff=Vdot(select_ind_5)-Vdot_SEL  
   print *, "------Main_5--------"
   print *, "gckpp_Function",SUM(ABS(diff))
