@@ -28,6 +28,8 @@ program main
   CALL Fun ( X, F, RCT, Vdot)
   CALL Fun2 ( X, F, RCT, Vdot2, Prate, Lrate, Lrate2)
   diff=Prate+Lrate-Vdot
+  print *,diff
+  print *,'---------'
   print *, SUM(ABS(diff  ))
   diff=Lrate-Lrate2*X
   print *, SUM(ABS(diff  ))  
