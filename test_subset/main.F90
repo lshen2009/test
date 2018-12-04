@@ -11,7 +11,7 @@ program main
   REAL(kind=dp) :: JVS(LU_NONZERO_12),JVS_orig(LU_NONZERO_12)
   REAL(kind=dp) :: X_selected(LU_NSEL_12),X_deleted(LU_NDEL_12),X(NVAR)
   REAL(kind=dp) :: JVS1(LU_NONZERO_12),JVS2(LU_NONZERO_12)
-  REAL(kind=dp) :: F(NFIX),RCT(NREACT),Vdot_SEL(LU_NSEL_12),Vdot(NVAR)
+  REAL(kind=dp) :: F(NFIX),RCT(NREACT),Vdot_SEL(LU_NSEL_12),Vdot(NVAR),diff(LU_NSEL_12)
   INTEGER:: IER,i,j,k
 
   CALL initialize_1D(JVS_orig)
@@ -26,8 +26,7 @@ program main
   !First check the Function
   CALL Fun_12 ( X_selected,X_deleted, F, RCT, Vdot_SEL)
   CALL Fun_13 ( X, F, RCT, Vdot, NVAR )
-  print *, Vdot_SEL
-  print *,'----------'
-  print *, Vdot(select_ind_12)
+  diff=Vdot(select_ind_12)-Vdot_SEL  
+  print *, SUM(ABS(diff))
 
 end program
