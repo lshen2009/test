@@ -14,7 +14,7 @@ program main
   REAL(kind=dp) :: JVS1(LU_NONZERO_3),JVS2(LU_NONZERO)
   REAL(kind=dp) :: F(NFIX),RCT(NREACT),Vdot_SEL(LU_NSEL_3),Vdot(NVAR),diff(LU_NSEL_3)
   REAL(kind=dp) :: diff2(LU_NONZERO_3)
-  REAL(kind=dp) :: Jcb1(LU_NSEL_3,LU_NSEL_3),Jcb2(NVAR,NVAR)
+  REAL(kind=dp) :: Jcb1(LU_NSEL_3,LU_NSEL_3),Jcb2(NVAR,NVAR),Jcb3(LU_NSEL_3,LU_NSEL_3)
   INTEGER:: IER,i,j,k
 
   CALL initialize_1D(JVS_orig)
@@ -44,5 +44,12 @@ program main
   DO i=1,LU_NONZERO
      Jcb2(LU_IROW_13(i),LU_ICOL_13(i)) = JVS2(i)
   END DO
+
+  DO i=1,LU_NSEL_3
+    DO j=1,LU_NSEL_3
+	  Jcb3(i,j)=Jcb2(select_ind_3(i),select_ind_3(j))
+	END DO
+  END DO
+
 
 end program
