@@ -1,11 +1,8 @@
 program main
   USE gckpp_Parameters
-  USE gckpp_JacobianSP
-  USE gckpp_Function
-  USE gckpp_Function2
-  USE gckpp_Jacobian
+  USE gckpp_Function2 
   USE initialize
-  USE gckpp_LinearAlgebra
+ 
 
   IMPLICIT NONE
   
