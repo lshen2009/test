@@ -19,14 +19,15 @@ program main
   CALL initialize_1D(F)
   CALL initialize_1D(RCT)
   Vdot=0
+  Vdot2=0
   Prate=0
   Lrate=0
   Lrate2=0
   
-  diff=99
-  X=X*9999
-  F=F*9999
-  RCT=RCT*9999
+  diff=0
+  X=X*1000
+  F=F*1000
+  RCT=RCT*1000
   
   !First check the Function  
   CALL Fun ( X, F, RCT, Vdot)
