@@ -15,6 +15,7 @@ program main
   REAL(kind=dp) :: F(NFIX),RCT(NREACT),Vdot_SEL(LU_NSEL_3),Vdot(NVAR),diff(LU_NSEL_3)
   REAL(kind=dp) :: diff2(LU_NONZERO_3)
   REAL(kind=dp) :: Jcb1(LU_NSEL_3,LU_NSEL_3),Jcb2(NVAR,NVAR),Jcb3(LU_NSEL_3,LU_NSEL_3)
+  REAL(kind=dp) :: JacDiff(LU_NSEL_3,LU_NSEL_3)
   INTEGER:: IER,i,j,k
 
   CALL initialize_1D(JVS_orig)
@@ -50,6 +51,10 @@ program main
 	  Jcb3(i,j)=Jcb2(select_ind_3(i),select_ind_3(j))
 	END DO
   END DO
+  
+  JacDiff=Jcb3-Jcb1
+  print *, SUM(ABS(JacDiff))
+
 
 
 end program
