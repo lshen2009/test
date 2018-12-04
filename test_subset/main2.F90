@@ -40,6 +40,7 @@ program main
   print *,'---------'
   print *, SUM(ABS(diff  ))
   diff=0
+  X=0
   diff=Lrate-Lrate2*X
   print *, SUM(ABS(diff  ))  
 
