@@ -18,9 +18,10 @@ program main
   CALL initialize_1D(X)
   CALL initialize_1D(F)
   CALL initialize_1D(RCT)
+  Vdot=0
   
-  X_selected=X(select_ind_2)
-  X_deleted=X(delete_ind_2)
+  X_selected=X(select_ind_12)
+  X_deleted=X(delete_ind_12)
   !First check the Function
   SUBROUTINE Fun_20 ( X_selected,X_deleted, F, RCT, Vdot) 
 
