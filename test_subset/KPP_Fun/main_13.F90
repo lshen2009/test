@@ -29,16 +29,15 @@ program main
   Jcb2=0
   
   X_selected=X(select_ind_13)
-  X_deleted=X(delete_ind_13)
   !First check the Function
-  CALL Fun_13 ( X_selected,X_deleted, F, RCT, Vdot_SEL)
+  CALL Fun_13 ( X_selected, F, RCT, Vdot_SEL, LU_NSEL_13)
   CALL Fun ( X, F, RCT, Vdot)
   diff=Vdot(select_ind_13)-Vdot_SEL  
   print *, "------Main_13--------"
   print *, "gckpp_Function",SUM(ABS(diff))
   
 
-  CALL Jac_SP_13(X_selected,X_deleted, F, RCT, JVS1)
+  CALL Jac_SP_13(X_selected, F, RCT, JVS1)
   DO i=1,LU_NONZERO_13
      Jcb1(LU_IROW_13(i),LU_ICOL_13(i)) = JVS1(i)
   END DO  
