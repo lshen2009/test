@@ -27,7 +27,7 @@ program main
   !First check the Function  
   CALL Fun ( X, F, RCT, Vdot)
   CALL Fun2 ( X, F, RCT, Vdot2, Prate, Lrate, Lrate2)
-  diff=Prate+Lrate-Vdot
+  diff=Prate+Lrate-Vdot2
   print *,diff
   print *,'---------'
   print *, SUM(ABS(diff  ))
