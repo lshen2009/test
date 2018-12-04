@@ -33,7 +33,7 @@ program main
   CALL Fun_3 ( X_selected,X_deleted, F, RCT, Vdot_SEL)
   CALL Fun_13 ( X, F, RCT, Vdot, NVAR )
   diff=Vdot(select_ind_3)-Vdot_SEL  
-  print *, SUM(ABS(diff))
+  print *, "gckpp_Function",SUM(ABS(diff))
   
 
   CALL Jac_SP_3(X_selected,X_deleted, F, RCT, JVS1)
@@ -53,7 +53,7 @@ program main
   END DO
   
   JacDiff=Jcb3-Jcb1
-  print *, SUM(ABS(JacDiff))
+  print *,"gckpp_Jac_SP", SUM(ABS(JacDiff))
 
 
 
