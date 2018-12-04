@@ -27,6 +27,7 @@ program main
   CALL Fun_12 ( X_selected,X_deleted, F, RCT, Vdot_SEL)
   CALL Fun_13 ( X, F, RCT, Vdot, NVAR )
   print *, Vdot_SEL
+  print *,'----------'
   print *, Vdot(select_ind_12)
 
 end program
