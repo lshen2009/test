@@ -8,10 +8,10 @@ program main
   IMPLICIT NONE
   
 
-  REAL(kind=dp) :: JVS(LU_NONZERO_12),JVS_orig(LU_NONZERO_12)
-  REAL(kind=dp) :: X_selected(LU_NSEL_12),X_deleted(LU_NDEL_12),X(NVAR)
-  REAL(kind=dp) :: JVS1(LU_NONZERO_12),JVS2(LU_NONZERO_12)
-  REAL(kind=dp) :: F(NFIX),RCT(NREACT),Vdot_SEL(LU_NSEL_12),Vdot(NVAR),diff(LU_NSEL_12)
+  REAL(kind=dp) :: JVS(LU_NONZERO_2),JVS_orig(LU_NONZERO_2)
+  REAL(kind=dp) :: X_selected(LU_NSEL_2),X_deleted(LU_NDEL_2),X(NVAR)
+  REAL(kind=dp) :: JVS1(LU_NONZERO_2),JVS2(LU_NONZERO_2)
+  REAL(kind=dp) :: F(NFIX),RCT(NREACT),Vdot_SEL(LU_NSEL_2),Vdot(NVAR),diff(LU_NSEL_2)
   INTEGER:: IER,i,j,k
 
   CALL initialize_1D(JVS_orig)
@@ -21,12 +21,12 @@ program main
   Vdot=0
   Vdot_SEL=0
   
-  X_selected=X(select_ind_12)
-  X_deleted=X(delete_ind_12)
+  X_selected=X(select_ind_2)
+  X_deleted=X(delete_ind_2)
   !First check the Function
-  CALL Fun_12 ( X_selected,X_deleted, F, RCT, Vdot_SEL)
+  CALL Fun_2 ( X_selected,X_deleted, F, RCT, Vdot_SEL)
   CALL Fun_13 ( X, F, RCT, Vdot, NVAR )
-  diff=Vdot(select_ind_12)-Vdot_SEL  
+  diff=Vdot(select_ind_2)-Vdot_SEL  
   print *, SUM(ABS(diff))
 
 end program
