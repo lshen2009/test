@@ -20,6 +20,9 @@ program main
   CALL initialize_1D(RCT)
   Vdot=0
   diff=99
+  X=X*9999
+  F=F*9999
+  RCT=RCT*9999
   
   !First check the Function  
   CALL Fun ( X, F, RCT, Vdot)
