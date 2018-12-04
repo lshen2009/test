@@ -26,6 +26,7 @@ program main
   !First check the Function
   CALL Fun_12 ( X_selected,X_deleted, F, RCT, Vdot_SEL)
   CALL Fun_13 ( X, F, RCT, Vdot, NVAR )
-  
+  print *, X_deleted
+  print *, Vdot
 
 end program
