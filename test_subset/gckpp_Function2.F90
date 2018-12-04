@@ -3691,7 +3691,7 @@ SUBROUTINE Fun2 ( V, F, RCT, Vdot, Prate, Lrate, Lrate2)
   Lrate2(234) = -0.91*RCT(299)*V(229)-RCT(324)*V(231)-RCT(540)*V(131)-RCT(543)*V(145)-RCT(545)*V(198)&
                 &-RCT(549)*V(196)-RCT(552)*V(186)-RCT(558)-RCT(559)
 				
-print *,'FUN2',Prate(234),Lrate(234),Vdot(234),Prate(234)+Lrate(234)-Vdot(234)
+print *,'FUN2',Prate(234),Lrate(234),Vdot(234),Prate(234)+Lrate(234)-Vdot(234),Lrate2(234)*X(234)
 END SUBROUTINE Fun2
 
 
