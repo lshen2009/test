@@ -19,6 +19,10 @@ program main
   CALL initialize_1D(F)
   CALL initialize_1D(RCT)
   Vdot=0
+  Prate=0
+  Lrate=0
+  Lrate2=0
+  
   diff=99
   X=X*9999
   F=F*9999
