@@ -36,13 +36,12 @@ program main
   print *,'----------'
   diff=0
   diff=Prate+Lrate-Vdot2
-  DO i=1,234
-     print *,i,diff(i)
-  END DO
   print *,'---------'
   print *, SUM(ABS(diff  ))
   diff=0  
   diff=Lrate-Lrate2*X
-  print *, SUM(ABS(diff  ))  
+  DO i=1,234
+     print *,i,Lrate(i),Lrate2(i)*X(i),diff(i)
+  END DO
 
 end program
