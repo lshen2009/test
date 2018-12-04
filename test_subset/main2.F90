@@ -11,8 +11,8 @@ program main
   
 
   REAL(kind=dp) :: X(NVAR)
-  REAL(kind=dp) :: F(NFIX),RCT(NREACT),Vdot(NVAR),diff(NVAR)
-  REAL(kind=dp) :: Prate(NVAR),Lrate(NVAR),Lrate2(NVAR),Vdot2(NVAR),diff(NVAR)
+  REAL(kind=dp) :: F(NFIX),RCT(NREACT),Vdot(NVAR),Vdot2(NVAR),diff(NVAR)
+  REAL(kind=dp) :: Prate(NVAR),Lrate(NVAR),Lrate2(NVAR)
   INTEGER:: IER,i,j,k
 
   CALL initialize_1D(X)
