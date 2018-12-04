@@ -35,7 +35,7 @@ program main
   print *, SUM(ABS(diff))
   
 
-  CALL Jac_SP_2(VAR1,VAR2, F, RCT, JVS1)
+  CALL Jac_SP_2(X_selected,X_deleted, F, RCT, JVS1)
   DO i=1,LU_NONZERO_3
      Jcb1(LU_IROW_3(i),LU_ICOL_3(i)) = JVS1(i)
   END DO  
