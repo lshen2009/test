@@ -25,9 +25,9 @@ program main
   Lrate2=0
   
   diff=0
-  X=X*1000
-  F=F*1000
-  RCT=RCT*1000
+  X=X*999
+  F=F*999
+  RCT=RCT*999
   
   !First check the Function  
   CALL Fun ( X, F, RCT, Vdot)
@@ -44,8 +44,7 @@ program main
   END DO
   print *,'---------'
   print *, SUM(ABS(diff  ))
-  diff=0
-  X=0
+  diff=0  
   diff=Lrate-Lrate2*X
   print *, SUM(ABS(diff  ))  
 
