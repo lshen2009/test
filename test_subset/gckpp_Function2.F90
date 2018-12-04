@@ -3690,7 +3690,8 @@ SUBROUTINE Fun2 ( V, F, RCT, Vdot, Prate, Lrate, Lrate2)
                 &-RCT(396)*V(183)-RCT(397)*V(183)-RCT(669)
   Lrate2(234) = -0.91*RCT(299)*V(229)-RCT(324)*V(231)-RCT(540)*V(131)-RCT(543)*V(145)-RCT(545)*V(198)&
                 &-RCT(549)*V(196)-RCT(552)*V(186)-RCT(558)-RCT(559)
-
+				
+print *,'FUN2',SUM(ABS(Prate+Lrate-Vdot))
 END SUBROUTINE Fun2
 
 
